@@ -93,6 +93,135 @@
   <div class="procedure-grid" id="gridContainer"></div>
 </div>
 
+<script>
+  let allAlgorithms = []; // 読み込んだJSONデータを保持する配列
 
+  // 1. JSONファイルを動的に読み込んでID順にソートする関数
+  async function loadAlgset(setName) {
+    const container = document.getElementById('gridContainer');
+    container.innerHTML = "<p style='text-align:center; grid-column:1/-1;'>データを読み込み中...</p>";
+    
+    try {
+      const response = await fetch(`data/${setName}.json`);
+      const rawData = await response.json();
+      
+      // 通し番号（id）の小さい順に自動で並び替える
+      allAlgorithms = rawData.sort((a, b) => a.id - b.id);
+      
+      document.getElementById('searchInput').value = '';
+      renderCards(allAlgorithms);
+    } catch (error) {
+      console.error(error);
+      container.innerHTML = `<p style='text-align:center; grid-column:1/-1; color:red;'>data/${setName}.json が見つからないか、エラーがあります。</p>`;
+    }
+  }
+
+  // 2. カードを描画する関数
+  function renderCards(data) {
+    const container = document.getElementById('gridContainer');
+    container.innerHTML = '';
+
+    if (data.length === 0) {
+      container.innerHTML = "<p style='grid-column: 1/-1; text-align:center; color:#999;'>該当する手順がありません</p>";
+      return;
+    }
+
+    // 💡 dataの何番目かを表す「index」を活用します
+    data.forEach((item, index) => {
+      const card = document.createElement('div');
+      card.className = 'alg-card';
+      
+      // 💡 修正ポイント：onclickには文字列（item.moves）を直接渡さず、
+      // 単なる数字である「index」だけを渡すようにします。これで「'」や「"」の衝突が絶対に起きません！
+      card.innerHTML = `
+        <div>
+          <div class="alg-name">${item.name}</div>
+          <div class="alg-moves">${item.moves}</div>
+        </div>
+        <div>
+          <button class="dropdown-btn" onclick="toggleDropdown(this, ${index})">3Dビューを見る</button>
+          <div class="dropdown-content"></div>
+        </div>
+      `;
+      container.appendChild(card);
+    });
+  }
+
+  // 3. リアルタイム検索フィルター関数
+  function filterData() {
+    const searchText = document.getElementById('searchInput').value.toLowerCase();
+    
+    // 💡 検索中も元の「allAlgorithms」のインデックスを維持するため、元のデータに元の位置を記憶させる
+    const dataWithIndex = allAlgorithms.map((item, index) => ({ ...item, originalIndex: index }));
+
+    const filtered = dataWithIndex.filter(item => {
+      return (
+        item.name.toLowerCase().includes(searchText) ||
+        item.moves.toLowerCase().includes(searchText) ||
+        String(item.id).includes(searchText)
+      );
+    });
+
+    // 検索結果を表示（引数の渡し方を調整）
+    const container = document.getElementById('gridContainer');
+    container.innerHTML = '';
+
+    if (filtered.length === 0) {
+      container.innerHTML = "<p style='grid-column: 1/-1; text-align:center; color:#999;'>該当する手順がありません</p>";
+      return;
+    }
+
+    filtered.forEach(item => {
+      const card = document.createElement('div');
+      card.className = 'alg-card';
+      card.innerHTML = `
+        <div>
+          <div class="alg-name">${item.name}</div>
+          <div class="alg-moves">${item.moves}</div>
+        </div>
+        <div>
+          <button class="dropdown-btn" onclick="toggleDropdown(this, ${item.originalIndex})">3Dビューを見る</button>
+          <div class="dropdown-content"></div>
+        </div>
+      `;
+      container.appendChild(card);
+    });
+  }
+
+  // 4. ドロップダウン開閉（数字のインデックスから安全に手順を取り出す）
+  // 💡 第一引数はボタン自身（this）、第二引数は配列の何番目かという数字（index）
+  function toggleDropdown(button, index) {
+    const content = button.nextElementSibling;
+    
+    if (content.style.maxHeight && content.style.maxHeight !== "0px") {
+      content.style.maxHeight = "0px";
+      button.innerText = "3Dビューを見る";
+      setTimeout(() => { content.innerHTML = ""; }, 250);
+    } else {
+      button.innerText = "閉じる";
+      
+      // 💡 安全に全データから対応する手順テキストを引っ張ってくる
+      const targetAlg = allAlgorithms[index].moves;
+      
+      const player = document.createElement('twisty-player');
+      player.setAttribute('control-panel', 'bottom');
+      player.setAttribute('background', 'none');
+      player.setAttribute('experimental-setup-anchor', 'end');
+      player.setAttribute('alg', targetAlg); // 安全に取り出した手順をセット
+      
+      content.appendChild(player);
+      content.style.maxHeight = "260px"; 
+    }
+  }
+
+  document.getElementById('searchInput').addEventListener('input', filterData);
+
+  // 初期読込
+  window.onload = () => {
+    const initialSet = document.getElementById('algsetSelect').value;
+    loadAlgset(initialSet);
+  };
+</script>
+  
 </body>
 </html>
