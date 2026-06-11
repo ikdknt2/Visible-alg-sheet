@@ -1,17 +1,1002 @@
 [
   {
     "id": 1,
-    "name": "UF-UB-UR",
+    "name": "あ い",
     "moves": "[R2 U': [S, R2]]"
   },
   {
     "id": 2,
-    "name": "UF-UB-UL",
+    "name": "あ え",
     "moves": "[L2 U: [S', L2]]"
   },
-    {
+  {
+    "id": 3,
+    "name": "あ き",
+    "moves": "[R' U': [S, R2]]"
+  },
+  {
     "id": 4,
-    "name": "ここに手順の名前を入力",
-    "moves": "ここに回転記号やコミュテータを入力"
+    "name": "あ く",
+    "moves": "[R' F': [R U R', E]]"
+  },
+  {
+    "id": 5,
+    "name": "あ け",
+    "moves": "[L U: [S', L2]]"
+  },
+  {
+    "id": 6,
+    "name": "あ さ",
+    "moves": "[U M U: [M', U2]]"
+  },
+  {
+    "id": 7,
+    "name": "あ し",
+    "moves": "[U: [L' E L, U2]]"
+  },
+  {
+    "id": 8,
+    "name": "あ す",
+    "moves": "[U': [R E R', U2]]"
+  },
+  {
+    "id": 9,
+    "name": "あ せ",
+    "moves": "[U: [L E' L', U2]]"
+  },
+  {
+    "id": 10,
+    "name": "あ ち",
+    "moves": "[L' U: [S', L2]]"
+  },
+  {
+    "id": 11,
+    "name": "あ つ",
+    "moves": "[U M' U: [M', U2]]"
+  },
+  {
+    "id": 12,
+    "name": "あ て",
+    "moves": "[R U': [S, R2]]"
+  },
+  {
+    "id": 13,
+    "name": "あ な",
+    "moves": "[U' M U': [M', U2]]"
+  },
+  {
+    "id": 14,
+    "name": "あ に",
+    "moves": "[U': [R' E R, U2]]"
+  },
+  {
+    "id": 15,
+    "name": "あ ぬ",
+    "moves": "[U: [L' E' L, U2]]"
+  },
+  {
+    "id": 16,
+    "name": "あ ね",
+    "moves": "[U': [R E' R', U2]]"
+  },
+  {
+    "id": 17,
+    "name": "あ は",
+    "moves": "[U2, M']"
+  },
+  {
+    "id": 18,
+    "name": "あ ひ",
+    "moves": "[U': [S, R2]]"
+  },
+  {
+    "id": 19,
+    "name": "あ ふ",
+    "moves": "[M, U2]"
+  },
+  {
+    "id": 20,
+    "name": "あ へ",
+    "moves": "[U: [S', L2]]"
+  },
+  {
+    "id": 21,
+    "name": "い あ",
+    "moves": "[R2 U': [R2, S]]"
+  },
+  {
+    "id": 22,
+    "name": "い え",
+    "moves": "[M2 U: [M, U2]]"
+  },
+  {
+    "id": 23,
+    "name": "い き",
+    "moves": "[E': [U', R' E R]]"
+  },
+  {
+    "id": 24,
+    "name": "い く",
+    "moves": "[M', R U' R' U]"
+  },
+  {
+    "id": 25,
+    "name": "い け",
+    "moves": "[U', R E2 R']"
+  },
+  {
+    "id": 26,
+    "name": "い し",
+    "moves": "[U: [L' E L, U]]"
+  },
+  {
+    "id": 27,
+    "name": "い す",
+    "moves": "[U', R E R']"
+  },
+  {
+    "id": 28,
+    "name": "い せ",
+    "moves": "[U: [L E' L', U]]"
+  },
+  {
+    "id": 29,
+    "name": "い た",
+    "moves": "[M, R' U' R U]"
+  },
+  {
+    "id": 30,
+    "name": "い ち",
+    "moves": "[U', R' E2 R]"
+  },
+  {
+    "id": 31,
+    "name": "い つ",
+    "moves": "U M U M' U M U M'"
+  },
+  {
+    "id": 32,
+    "name": "い て",
+    "moves": "[U: [L E2 L', U]]"
+  },
+  {
+    "id": 33,
+    "name": "い な",
+    "moves": "[S', L F' L']"
+  },
+  {
+    "id": 34,
+    "name": "い に",
+    "moves": "[U', R' E R]"
+  },
+  {
+    "id": 35,
+    "name": "い ぬ",
+    "moves": "[U: [L' E' L, U]]"
+  },
+  {
+    "id": 36,
+    "name": "い ね",
+    "moves": "[U', R E' R']"
+  },
+  {
+    "id": 37,
+    "name": "い は",
+    "moves": "[R U R' U: [M', U2]]"
+  },
+  {
+    "id": 38,
+    "name": "い ひ",
+    "moves": "U' R E' R2 E R U R' E' R2 E R'"
+  },
+  {
+    "id": 39,
+    "name": "い ふ",
+    "moves": "[M2: [U' R' U, M2]]"
+  },
+  {
+    "id": 40,
+    "name": "い へ",
+    "moves": "[S' R' F R: [S, R2]]"
+  },
+  {
+    "id": 41,
+    "name": "え あ",
+    "moves": "[L2 U: [L2, S']]"
+  },
+  {
+    "id": 42,
+    "name": "え い",
+    "moves": "[M2 U': [M, U2]]"
+  },
+  {
+    "id": 43,
+    "name": "え き",
+    "moves": "[U, L' E2 L]"
+  },
+  {
+    "id": 44,
+    "name": "え く",
+    "moves": "[M', L' U L U']"
+  },
+  {
+    "id": 45,
+    "name": "え け",
+    "moves": "[E: [U, L E' L']]"
+  },
+  {
+    "id": 46,
+    "name": "え さ",
+    "moves": "[S, R' F R]"
+  },
+  {
+    "id": 47,
+    "name": "え し",
+    "moves": "[U, L' E L]"
+  },
+  {
+    "id": 48,
+    "name": "え す",
+    "moves": "[U': [R E R', U']]"
+  },
+  {
+    "id": 49,
+    "name": "え せ",
+    "moves": "[U, L E' L']"
+  },
+  {
+    "id": 50,
+    "name": "え た",
+    "moves": "[M, L U L' U']"
+  },
+  {
+    "id": 51,
+    "name": "え ち",
+    "moves": "[Uw: [L' E L, U']]"
+  },
+  {
+    "id": 52,
+    "name": "え つ",
+    "moves": "U' M U' M' U' M U' M'"
+  },
+  {
+    "id": 53,
+    "name": "え て",
+    "moves": "[U, L E2 L']"
+  },
+  {
+    "id": 54,
+    "name": "え に",
+    "moves": "[U': [R' E R, U']]"
+  },
+  {
+    "id": 55,
+    "name": "え ぬ",
+    "moves": "[U, L' E' L]"
+  },
+  {
+    "id": 56,
+    "name": "え ね",
+    "moves": "[U': [R E' R', U']]"
+  },
+  {
+    "id": 57,
+    "name": "え は",
+    "moves": "[M U2 M, U']"
+  },
+  {
+    "id": 58,
+    "name": "え ひ",
+    "moves": "U R U R' U' R' U' R' U R"
+  },
+  {
+    "id": 59,
+    "name": "え ふ",
+    "moves": "[M2: [U L U', M2]]"
+  },
+  {
+    "id": 60,
+    "name": "え へ",
+    "moves": "L U' Rw E Rw2 E Rw U L'"
+  },
+  {
+    "id": 61,
+    "name": "き あ",
+    "moves": "[R' U': [R2, S]]"
+  },
+  {
+    "id": 62,
+    "name": "き い",
+    "moves": "[E': [R' E R, U']]"
+  },
+  {
+    "id": 63,
+    "name": "き え",
+    "moves": "[L' E2 L, U]"
+  },
+  {
+    "id": 64,
+    "name": "き く",
+    "moves": "[M', U' R U]"
+  },
+  {
+    "id": 65,
+    "name": "き け",
+    "moves": "[R' U' R: [E, R2]]"
+  },
+  {
+    "id": 66,
+    "name": "き さ",
+    "moves": "[R' U' E' R: [E, R2]]"
+  },
+  {
+    "id": 67,
+    "name": "き し",
+    "moves": "[R U' R', E']"
+  },
+  {
+    "id": 68,
+    "name": "き す",
+    "moves": "[R' Fw R': [S', R2]]"
+  },
+  {
+    "id": 69,
+    "name": "き た",
+    "moves": "[M, U' R U]"
+  },
+  {
+    "id": 70,
+    "name": "き ち",
+    "moves": "[R' U' R': [E', R2]]"
+  },
+  {
+    "id": 71,
+    "name": "き つ",
+    "moves": "[U L B': [E', L2]]"
+  },
+  {
+    "id": 72,
+    "name": "き て",
+    "moves": "[U R': [S, R2]]"
+  },
+  {
+    "id": 73,
+    "name": "き な",
+    "moves": "[S' U L: [E', L2]]"
+  },
+  {
+    "id": 74,
+    "name": "き に",
+    "moves": "[R U' R', E]"
+  },
+  {
+    "id": 75,
+    "name": "き ぬ",
+    "moves": "[D: [M', U' R U]]"
+  },
+  {
+    "id": 76,
+    "name": "き ね",
+    "moves": "[R: [U', R E' R']]"
+  },
+  {
+    "id": 77,
+    "name": "き は",
+    "moves": "R' Fw2 R2 U' R2 Fw2 R2 U' R'"
+  },
+  {
+    "id": 78,
+    "name": "き ひ",
+    "moves": "U R' U' R' U R U R U R' U2"
+  },
+  {
+    "id": 79,
+    "name": "き ふ",
+    "moves": "[M2, U' R U]"
+  },
+  {
+    "id": 80,
+    "name": "き へ",
+    "moves": "[U L: [E', L2]]"
+  },
+  {
+    "id": 81,
+    "name": "く あ",
+    "moves": "[R' F': [E, R U R']]"
+  },
+  {
+    "id": 82,
+    "name": "く い",
+    "moves": "[R: [U' R' U, M']]"
+  },
+  {
+    "id": 83,
+    "name": "く え",
+    "moves": "[L': [U L U', M']]"
+  },
+  {
+    "id": 84,
+    "name": "く き",
+    "moves": "[U' R U, M']"
+  },
+  {
+    "id": 85,
+    "name": "く け",
+    "moves": "[U L' U', M']"
+  },
+  {
+    "id": 86,
+    "name": "く さ",
+    "moves": "[M': [R U R' U', M']]"
+  },
+  {
+    "id": 87,
+    "name": "く し",
+    "moves": "[M': [U R' U', M']]"
+  },
+  {
+    "id": 88,
+    "name": "く す",
+    "moves": "[M': [U R2 U', M']]"
+  },
+  {
+    "id": 89,
+    "name": "く せ",
+    "moves": "[M': [U R U', M']]"
+  },
+  {
+    "id": 90,
+    "name": "く た",
+    "moves": "[D: [U R2 U', M]]"
+  },
+  {
+    "id": 91,
+    "name": "く ち",
+    "moves": "[U L U', M']"
+  },
+  {
+    "id": 92,
+    "name": "く つ",
+    "moves": "U M' U' M U2 M U M' U"
+  },
+  {
+    "id": 93,
+    "name": "く て",
+    "moves": "[U' R' U, M']"
+  },
+  {
+    "id": 94,
+    "name": "く な",
+    "moves": "[M': [L' U' L U, M']]"
+  },
+  {
+    "id": 95,
+    "name": "く に",
+    "moves": "[M': [U' L' U, M']]"
+  },
+  {
+    "id": 96,
+    "name": "く ぬ",
+    "moves": "[M': [U' L2 U, M']"
+  },
+  {
+    "id": 97,
+    "name": "く ね",
+    "moves": "[M': [U' L U, M']]"
+  },
+  {
+    "id": 98,
+    "name": "く ひ",
+    "moves": "[U' R2 U, M']"
+  },
+  {
+    "id": 99,
+    "name": "く ふ",
+    "moves": "[M' D: [U R2 U', M]]"
+  },
+  {
+    "id": 100,
+    "name": "く へ",
+    "moves": "[U L2 U', M']"
+  },
+  {
+    "id": 101,
+    "name": "け あ",
+    "moves": "[L U: [L2, S']]"
+  },
+  {
+    "id": 102,
+    "name": "け い",
+    "moves": "[R E2 R', U']"
+  },
+  {
+    "id": 103,
+    "name": "け え",
+    "moves": "[E: [L E' L', U]]"
+  },
+  {
+    "id": 104,
+    "name": "け き",
+    "moves": "[R' U' R': [E, R2]]"
+  },
+  {
+    "id": 105,
+    "name": "け く",
+    "moves": "[M', U L' U']"
+  },
+  {
+    "id": 106,
+    "name": "け さ",
+    "moves": "[S U' R: [R2, E]]"
+  },
+  {
+    "id": 107,
+    "name": "け し",
+    "moves": "[L': [U, L' E L]]"
+  },
+  {
+    "id": 108,
+    "name": "け す",
+    "moves": "[D': [M', U L' U']]"
+  },
+  {
+    "id": 109,
+    "name": "け せ",
+    "moves": "[L' U L, E']"
+  },
+  {
+    "id": 110,
+    "name": "け た",
+    "moves": "[M, U L' U']"
+  },
+  {
+    "id": 111,
+    "name": "け ち",
+    "moves": "U' Rw E Rw2 E Rw U"
+  },
+  {
+    "id": 112,
+    "name": "け つ",
+    "moves": "[U' R' B: [E, R2]]"
+  },
+  {
+    "id": 113,
+    "name": "け て",
+    "moves": "[R U' R': [E, R2]]"
+  },
+  {
+    "id": 114,
+    "name": "け な",
+    "moves": "[L U E L': [E' ,L2]]"
+  },
+  {
+    "id": 115,
+    "name": "け ぬ",
+    "moves": "[S' U' R': [E, R2]]"
+  },
+  {
+    "id": 116,
+    "name": "け ね",
+    "moves": "[L' E' L, E]"
+  },
+  {
+    "id": 117,
+    "name": "け は",
+    "moves": "U' L' U' M' U2 M U' L U"
+  },
+  {
+    "id": 118,
+    "name": "け ひ",
+    "moves": "[U' R': [E, R2]]"
+  },
+  {
+    "id": 119,
+    "name": "け ふ",
+    "moves": "[M2, U R U']"
+  },
+  {
+    "id": 120,
+    "name": "け へ",
+    "moves": "D U' L' U' M' U2 M U' L U D'"
+  },
+  {
+    "id": 121,
+    "name": "さ あ",
+    "moves": "[U M U': [M', U2]]"
+  },
+  {
+    "id": 122,
+    "name": "さ え",
+    "moves": "[R' F R, S]"
+  },
+  {
+    "id": 123,
+    "name": "さ く",
+    "moves": "[R' U' E' R': [E, R2]]"
+  },
+  {
+    "id": 124,
+    "name": "さ け",
+    "moves": "[Rw: [M', U R' U']]"
+  },
+  {
+    "id": 125,
+    "name": "さ さ",
+    "moves": "[L': [R' F R, S]]"
+  },
+  {
+    "id": 126,
+    "name": "さ し",
+    "moves": "[S': [U, L' E L]]"
+  },
+  {
+    "id": 127,
+    "name": "さ す",
+    "moves": "[Rw' D' R: [S', R2]]"
+  },
+  {
+    "id": 128,
+    "name": "さ せ",
+    "moves": "[S': [U, L E' L']]"
+  },
+  {
+    "id": 129,
+    "name": "さ た",
+    "moves": "[R: [U R' U', M']]"
+  },
+  {
+    "id": 130,
+    "name": "さ ち",
+    "moves": "[M': [U, R E' R']]"
+  },
+  {
+    "id": 131,
+    "name": "さ つ",
+    "moves": "M' U' M' U' M U' M' U' M2"
+  },
+  {
+    "id": 132,
+    "name": "さ て",
+    "moves": "[R Uw' R: [E', R2]]"
+  },
+  {
+    "id": 133,
+    "name": "さ な",
+    "moves": "[M U': [M', U2]]"
+  },
+  {
+    "id": 134,
+    "name": "さ に",
+    "moves": "[M L' U': [M', U2]]"
+  },
+  {
+    "id": 135,
+    "name": "さ ぬ",
+    "moves": "[U: [S, L F' L']]"
+  },
+  {
+    "id": 136,
+    "name": "さ ね",
+    "moves": "[R F: [E', R2]]"
+  },
+  {
+    "id": 137,
+    "name": "さ は",
+    "moves": "[R F: [R2, E]]"
+  },
+  {
+    "id": 138,
+    "name": "さ ひ",
+    "moves": "[R' F R, S']"
+  },
+  {
+    "id": 139,
+    "name": "さ ふ",
+    "moves": "[R M: [U R' U', M2]]"
+  },
+  {
+    "id": 140,
+    "name": "さ へ",
+    "moves": "[R': [F, R' S' R]]"
+  },
+  {
+    "id": 141,
+    "name": "し あ",
+    "moves": "[U': [L' E L, U2]]"
+  },
+  {
+    "id": 142,
+    "name": "し い",
+    "moves": "[U2: [L' E L, U']]"
+  },
+  {
+    "id": 143,
+    "name": "し え",
+    "moves": "[L' E L, U]"
+  },
+  {
+    "id": 144,
+    "name": "し く",
+    "moves": "[E', R U' R']"
+  },
+  {
+    "id": 145,
+    "name": "し け",
+    "moves": "[M2: [U R' U', M]]"
+  },
+  {
+    "id": 146,
+    "name": "し さ",
+    "moves": "[L': [L' E L, U]]"
+  },
+  {
+    "id": 147,
+    "name": "し し",
+    "moves": "[S': [L' E L, U]]"
+  },
+  {
+    "id": 148,
+    "name": "し す",
+    "moves": "[R, U' S U]"
+  },
+  {
+    "id": 149,
+    "name": "し せ",
+    "moves": "[E R U' R: [E', R2]]"
+  },
+  {
+    "id": 150,
+    "name": "し た",
+    "moves": "[U R' U', M']"
+  },
+  {
+    "id": 151,
+    "name": "し ち",
+    "moves": "[E, L U L']"
+  },
+  {
+    "id": 152,
+    "name": "し つ",
+    "moves": "[Uw U: [M, U' L U]]"
+  },
+  {
+    "id": 153,
+    "name": "し な",
+    "moves": "[R': [R' F R, S]]"
+  },
+  {
+    "id": 154,
+    "name": "し に",
+    "moves": "[F R' F' R: [E, R2]]"
+  },
+  {
+    "id": 155,
+    "name": "し ぬ",
+    "moves": "[S: [L' E L, U]]"
+  },
+  {
+    "id": 156,
+    "name": "し ね",
+    "moves": "[F: [E', R2]]"
+  },
+  {
+    "id": 157,
+    "name": "し は",
+    "moves": "[F: [R2, E]]"
+  },
+  {
+    "id": 158,
+    "name": "し ひ",
+    "moves": "[Uw' R: [E', R2]]"
+  },
+  {
+    "id": 159,
+    "name": "し ふ",
+    "moves": "[M: [U R' U', M2]]"
+  },
+  {
+    "id": 160,
+    "name": "し へ",
+    "moves": "[Uw L': [L2, E']]"
+  },
+  {
+    "id": 161,
+    "name": "た い",
+    "moves": "[R' U' R U, M]"
+  },
+  {
+    "id": 162,
+    "name": "た え",
+    "moves": "[L U L' U', M]"
+  },
+  {
+    "id": 163,
+    "name": "た き",
+    "moves": "[U' R U, M]"
+  },
+  {
+    "id": 164,
+    "name": "た く",
+    "moves": "[U': [R' F' R, S]]"
+  },
+  {
+    "id": 165,
+    "name": "た け",
+    "moves": "[U L' U', M]"
+  },
+  {
+    "id": 166,
+    "name": "た さ",
+    "moves": "[M', R U R' U']"
+  },
+  {
+    "id": 167,
+    "name": "た し",
+    "moves": "[M', U R' U']"
+  },
+  {
+    "id": 168,
+    "name": "た す",
+    "moves": "[M', U R2 U']"
+  },
+  {
+    "id": 169,
+    "name": "た せ",
+    "moves": "[M', U R U']"
+  },
+  {
+    "id": 170,
+    "name": "た ち",
+    "moves": "[U L U', M]"
+  },
+  {
+    "id": 171,
+    "name": "た つ",
+    "moves": "[U': [R B R', S]]"
+  },
+  {
+    "id": 172,
+    "name": "た て",
+    "moves": "[U' R' U, M]"
+  },
+  {
+    "id": 173,
+    "name": "た な",
+    "moves": "[M', L' U' L U]"
+  },
+  {
+    "id": 174,
+    "name": "た に",
+    "moves": "[M', U' L' U]"
+  },
+  {
+    "id": 175,
+    "name": "た ぬ",
+    "moves": "[M', U' L2' U]"
+  },
+  {
+    "id": 176,
+    "name": "た ね",
+    "moves": "[M', U' L U]"
+  },
+  {
+    "id": 177,
+    "name": "た は",
+    "moves": "[U: [S, R' F' R]]"
+  },
+  {
+    "id": 178,
+    "name": "た ひ",
+    "moves": "[U' R2 U, M]"
+  },
+  {
+    "id": 179,
+    "name": "た ふ",
+    "moves": "[M U': [R' F' R, S]]"
+  },
+  {
+    "id": 180,
+    "name": "た へ",
+    "moves": "[U L2 U', M]"
+  },
+  {
+    "id": 181,
+    "name": "ふ あ",
+    "moves": "[U2, M]"
+  },
+  {
+    "id": 182,
+    "name": "ふ い",
+    "moves": "[R' U' R U, M2]"
+  },
+  {
+    "id": 183,
+    "name": "ふ え",
+    "moves": "[L U L' U', M2]"
+  },
+  {
+    "id": 184,
+    "name": "ふ き",
+    "moves": "[U' R U, M2]"
+  },
+  {
+    "id": 185,
+    "name": "ふ く",
+    "moves": "[M D: [M',U R2 U']]"
+  },
+  {
+    "id": 186,
+    "name": "ふ け",
+    "moves": "[U L' U', M2]"
+  },
+  {
+    "id": 187,
+    "name": "ふ さ",
+    "moves": "[M': [R U R' U', M2]]"
+  },
+  {
+    "id": 188,
+    "name": "ふ し",
+    "moves": "[M': [U R' U', M2]]"
+  },
+  {
+    "id": 189,
+    "name": "ふ す",
+    "moves": "[M': [U R2 U', M2]]"
+  },
+  {
+    "id": 190,
+    "name": "ふ せ",
+    "moves": "[M': [U R U', M2]]"
+  },
+  {
+    "id": 191,
+    "name": "ふ た",
+    "moves": "[U: [R B R',S]]"
+  },
+  {
+    "id": 192,
+    "name": "ふ ち",
+    "moves": "[U' R' U, M2]"
+  },
+  {
+    "id": 193,
+    "name": "ふ て",
+    "moves": "[U L U', M2]"
+  },
+  {
+    "id": 194,
+    "name": "ふ な",
+    "moves": "[M': [L' U' L U, M2]]"
+  },
+  {
+    "id": 195,
+    "name": "ふ に",
+    "moves": "[M': [U' L' U, M2]]"
+  },
+  {
+    "id": 196,
+    "name": "ふ ぬ",
+    "moves": "[M': [U' L2 U, M2]]"
+  },
+  {
+    "id": 197,
+    "name": "ふ ね",
+    "moves": "[M': [U' L U, M2]]"
+  },
+  {
+    "id": 198,
+    "name": "ふ は",
+    "moves": "[M': [U2, M']]"
+  },
+  {
+    "id": 199,
+    "name": "ふ ひ",
+    "moves": "[U' R2 U, M2]"
+  },
+  {
+    "id": 200,
+    "name": "ふ へ",
+    "moves": "[U L2 U',M2]"
   }
 ]
