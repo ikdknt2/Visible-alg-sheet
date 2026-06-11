@@ -1,1 +1,189 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cube手順ダッシュボード（JSON連動版）</title>
+  
+  <script type="module" src="https://cdn.cubing.net/v0/js/cubing/twisty"></script>
+  
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f4f6f8;
+      color: #202124;
+      padding: 20px;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    h1 {
+      text-align: center;
+      color: #1a73e8;
+    }
 
+    /* 操作エリア（セレクトボックスと検索窓） */
+    .controls {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin: 20px 0 30px 0;
+    }
+    .select-input, .search-input {
+      padding: 12px 16px;
+      font-size: 1rem;
+      border: 2px solid #dadce0;
+      border-radius: 8px;
+      outline: none;
+    }
+    .select-input { background-color: white; cursor: pointer; }
+    .search-input { width: 100%; max-width: 400px; }
+    .select-input:focus, .search-input:focus { border-color: #1a73e8; }
+
+    /* Grid配置 */
+    .procedure-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    /* カードUI */
+    .alg-card {
+      background: white;
+      border-radius: 8px;
+      padding: 18px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.04);
+      border: 1px solid #eef2f5;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .alg-name { font-size: 1.2rem; font-weight: bold; color: #1a73e8; margin-bottom: 8px; }
+    .alg-moves {
+      font-family: monospace; font-size: 1.15rem; font-weight: bold;
+      background: #f1f3f4; padding: 12px; border-radius: 6px; margin-bottom: 15px; color: #3c4043;
+    }
+
+    /* ドロップダウン */
+    .dropdown-btn {
+      width: 100%; padding: 10px; background: #1a73e8; color: white;
+      border: none; border-radius: 6px; cursor: pointer; font-weight: bold;
+    }
+    .dropdown-content {
+      max-height: 0; overflow: hidden; transition: max-height 0.25s ease-out;
+      background: #fafafa; border-radius: 6px; margin-top: 10px; display: flex; justify-content: center;
+    }
+    twisty-player { width: 240px; height: 240px; }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Cube手順ダッシュボード</h1>
+
+  <div class="controls">
+    <select id="algsetSelect" class="select-input" onchange="loadAlgset(this.value)">
+      <option value="3style">3style</option>
+    </select>
+    
+    <input type="text" id="searchInput" class="search-input" placeholder="手順名、記号、通し番号で検索...">
+  </div>
+
+  <div class="procedure-grid" id="gridContainer"></div>
+</div>
+
+<script>
+  let allAlgorithms = []; // 読み込んだ現在のJSONデータを保持する配列
+
+  // 💡 【新機能】JSONファイルを動的に読み込んでID順にソートする関数
+  async function loadAlgset(setName) {
+    const container = document.getElementById('gridContainer');
+    container.innerHTML = "<p style='text-align:center; grid-column:1/-1;'>データを読み込み中...</p>";
+    
+    try {
+      // data/OLL.json などのファイルをネット経由で取得
+      const response = await fetch(`data/${setName}.json`);
+      const rawData = await response.json();
+      
+      // 通し番号（id）の小さい順に自動で並び替える
+      allAlgorithms = rawData.sort((a, b) => a.id - b.id);
+      
+      // 検索窓をリセットしてカードを描画
+      document.getElementById('searchInput').value = '';
+      renderCards(allAlgorithms);
+    } catch (error) {
+      console.error(error);
+      container.innerHTML = `<p style='text-align:center; grid-column:1/-1; color:red;'>data/${setName}.json が見つからないか、エラーがあります。</p>`;
+    }
+  }
+
+  // カードを描画する関数
+  function renderCards(data) {
+    const container = document.getElementById('gridContainer');
+    container.innerHTML = '';
+
+    if (data.length === 0) {
+      container.innerHTML = "<p style='grid-column: 1/-1; text-align:center; color:#999;'>該当する手順がありません</p>";
+      return;
+    }
+
+    data.forEach(item => {
+      const card = document.createElement('div');
+      card.className = 'alg-card';
+      card.innerHTML = `
+        <div>
+          <div class="alg-name">${item.name}</div>
+          <div class="alg-moves">${item.moves}</div>
+        </div>
+        <div>
+          <button class="dropdown-btn" onclick="toggleDropdown(this, '${item.moves}')">3Dビューを見る</button>
+          <div class="dropdown-content"></div>
+        </div>
+      `;
+      container.appendChild(card);
+    });
+  }
+
+  // リアルタイム検索フィルター関数
+  function filterData() {
+    const searchText = document.getElementById('searchInput').value.toLowerCase();
+    const filtered = allAlgorithms.filter(item => {
+      return (
+        item.name.toLowerCase().includes(searchText) ||
+        item.moves.toLowerCase().includes(searchText) ||
+        String(item.id).includes(searchText)
+      );
+    });
+    renderCards(filtered);
+  }
+
+  // ドロップダウン開閉（setup-anchor="end" を使用）
+  function toggleDropdown(button, alg) {
+    const content = button.nextElementSibling;
+    if (content.style.maxHeight && content.style.maxHeight !== "0px") {
+      content.style.maxHeight = "0px";
+      button.innerText = "3Dビューを見る";
+      setTimeout(() => { content.innerHTML = ""; }, 250);
+    } else {
+      button.innerText = "閉じる";
+      const player = document.createElement('twisty-player');
+      player.setAttribute('control-panel', 'bottom');
+      player.setAttribute('background', 'none');
+      player.setAttribute('experimental-setup-anchor', 'end');
+      player.setAttribute('alg', alg);
+      content.appendChild(player);
+      content.style.maxHeight = "260px"; 
+    }
+  }
+
+  document.getElementById('searchInput').addEventListener('input', filterData);
+
+  // 💡 ページを開いた瞬間に、セレクトボックスで選択されている初期セット（OLL）を自動読込
+  window.onload = () => {
+    const initialSet = document.getElementById('algsetSelect').value;
+    loadAlgset(initialSet);
+  };
+</script>
+</body>
+</html>
